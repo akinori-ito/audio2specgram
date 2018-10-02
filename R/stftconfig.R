@@ -20,10 +20,18 @@ stftconfig <- function(width, frameshift, towindow=hanning, fromwindow=rectwin) 
     fromwindow=fromwindow))
 }
 
+#' rectwin
+#' @param width number of samples of the window function
+#' @retuen a vector of rectangular window value (=all 1)
+#' @export
 rectwin <- function(width) {
   return(rep(1,width))
 }
 
+#' sinewin
+#' @param width number of samples of the window function
+#' @retuen a vector of sine window value
+#' @export
 sinewin <- function(width) {
   pi <- 3.14159265358
   return (sin((0:(width-1))/width*pi))
