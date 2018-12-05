@@ -13,7 +13,7 @@ audio2specgram <- function(x,config) {
     hwidth <- floor(width/2)
     nshift <- config$frameshift
     nframes <- floor(length(x)/nshift-1)
-    specgram <- matrix(0,nrow=nframes,ncol=nshift+1)
+    specgram <- matrix(0,nrow=nframes,ncol=hwidth+1)
     b <- 1
     for (frm in 1:nframes) {
         w <- x[b:(b+width-1)]*win
